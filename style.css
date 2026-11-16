@@ -1,0 +1,153 @@
+/* Seminário de Pesquisa PPGCAP 2026 — paleta do banner aprovado */
+:root {
+  --verde-escuro: #0b2a14;
+  --verde-medio: #134d24;
+  --verde-link: #17602b;
+  --lima: #c6f432;
+  --creme: #f6f1e4;
+  --fundo: #f7f8f3;
+  --texto: #18261b;
+  --texto-suave: #45574a;
+  --borda: #d5dccf;
+  --foco: #0a58ca;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: auto; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+a { color: var(--verde-link); text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; border-radius: 2px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.skip {
+  position: absolute; left: 8px; top: -100px; z-index: 10;
+  background: var(--lima); color: var(--verde-escuro);
+  padding: 8px 14px; font-weight: 700; border-radius: 6px;
+}
+.skip:focus { top: 8px; }
+
+/* ---------- Abertura ---------- */
+.topo {
+  background: var(--verde-escuro);
+  color: var(--creme);
+  padding: 16px 0 28px;
+}
+.banner {
+  display: block; width: 100%; height: auto;
+  border-radius: 10px; margin-bottom: 20px;
+}
+.sobretitulo {
+  margin: 0; font-size: 0.85rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--lima);
+}
+h1 {
+  margin: 4px 0 18px;
+  font-size: clamp(1.7rem, 6vw, 2.6rem);
+  line-height: 1.15;
+}
+.destaque { color: var(--lima); }
+
+.dados {
+  display: grid; gap: 10px; margin: 0 0 22px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+.dados div {
+  border-left: 4px solid var(--lima);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 8px 12px; border-radius: 0 8px 8px 0;
+}
+.dados dt { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #cfdcc9; }
+.dados dd { margin: 0; font-weight: 700; font-size: 1.1rem; }
+.nota { font-weight: 400; font-size: 0.9rem; color: #cfdcc9; }
+
+.lede { margin: 0 0 20px; color: var(--creme); max-width: 60ch; }
+
+.nav { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.nav a {
+  display: inline-block; padding: 10px 16px; border-radius: 999px;
+  background: var(--lima); color: var(--verde-escuro);
+  font-weight: 700; text-decoration: none;
+}
+.nav a:hover { background: #d8ff5c; }
+.topo :focus-visible { outline-color: var(--creme); }
+
+/* ---------- Seções ---------- */
+main section { padding: 32px 0 8px; border-bottom: 1px solid var(--borda); }
+main section:last-child { border-bottom: 0; padding-bottom: 32px; }
+h2 { margin: 0 0 12px; font-size: 1.5rem; line-height: 1.25; color: var(--verde-medio); }
+h3 { margin: 0 0 4px; font-size: 1.1rem; }
+p, ul, ol { margin: 0 0 14px; }
+li { margin-bottom: 6px; }
+
+.tempo {
+  background: #e9f3d6; border-left: 4px solid var(--verde-medio);
+  padding: 10px 14px; border-radius: 0 8px 8px 0;
+}
+
+.roteiro { padding-left: 1.6em; }
+.roteiro > li { margin-bottom: 16px; }
+.roteiro > li::marker { font-weight: 700; color: var(--verde-medio); }
+.roteiro p { margin-bottom: 6px; }
+.aviso { font-weight: 700; color: var(--verde-medio); }
+
+/* ---------- Programação ---------- */
+.programa { width: 100%; border-collapse: collapse; margin-bottom: 14px; }
+.programa th, .programa td {
+  text-align: left; vertical-align: top;
+  padding: 10px 8px; border-bottom: 1px solid var(--borda);
+}
+.programa th { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--texto-suave); }
+.programa td:first-child {
+  white-space: nowrap; width: 1%;
+  font-variant-numeric: tabular-nums; font-weight: 700; color: var(--verde-medio);
+}
+.programa td:last-child { overflow-wrap: anywhere; }
+.programa .pausa td { background: #eef1e8; color: var(--texto-suave); font-style: italic; }
+.programa .pausa td:first-child { font-style: normal; }
+.programa .bloco th {
+  padding-top: 18px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--verde-medio); border-bottom: 2px solid var(--verde-medio);
+}
+main:focus { outline: none; }
+
+@media (max-width: 380px) {
+  body { font-size: 1rem; }
+  .programa th, .programa td { padding: 9px 4px; }
+  .programa td:first-child { font-size: 0.92rem; }
+}
+
+/* ---------- Acesso ---------- */
+.aguardando {
+  background: #fff; border: 1px dashed var(--verde-medio);
+  padding: 14px 16px; border-radius: 8px;
+}
+.botao {
+  display: inline-block; padding: 12px 20px; border-radius: 999px;
+  background: var(--verde-medio); color: #fff; font-weight: 700; text-decoration: none;
+}
+.botao:hover { background: var(--verde-escuro); }
+
+/* ---------- Rodapé ---------- */
+.rodape { background: var(--verde-escuro); color: var(--creme); padding: 20px 0; font-size: 0.95rem; }
+.rodape p { margin: 0 0 6px; }
+.rodape a { color: var(--lima); }
+.rodape :focus-visible { outline-color: var(--creme); }
+
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
